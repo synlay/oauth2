@@ -23,6 +23,7 @@
 %%%_* Module declaration ===============================================
 -module(oauth2).
 -compile({no_auto_import, [get/2]}).
+-compile({parse_transform, exprecs}).
 
 %%%_* Exports ==========================================================
 %%%_ * API -------------------------------------------------------------
@@ -49,6 +50,8 @@
 -export_type([scope/0]).
 -export_type([appctx/0]).
 -export_type([error/0]).
+
+-export_records([a]).
 
 %%%_* Macros ===========================================================
 -define(BACKEND, (oauth2_config:backend())).
